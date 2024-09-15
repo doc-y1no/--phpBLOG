@@ -1,0 +1,51 @@
+テーブル
+・blogテーブル
+カラム
+・blog_id
+・blog_id
+・タイトル
+・本文
+
+データベース名：
+・blogs
+文字コード：
+・utf8mb4
+・utf8mb4_0900_ai_ci
+
+php artisan migrateでは更新できなかったとき
+php artisan migrate:fresh
+php artisan make:seeder blogSeeder
+php artisan db:seed --class=blogsSeeder
+　※実行したいクラスに記載が必要：use Illuminate\Support\Facades\DB;
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>テスト</title>
+
+    @vite('resources/css/app.css')
+</head>
+
+<body>
+
+     @if ($blogs->isNotEmpty())
+        <div class="container px-5 mx-auto">
+            <ul class="font-medium text-gray-900 bg-white rounded-lg border border-gray-200">
+                 @foreach ($blogs as $item)
+                    <li class="py-4 px-5 w-full rounded-t-lg border-b last:border-b-0 border-gray-200">
+                         {{ $item->title }}
+                </li>
+                <li class="py-4 px-5 w-full rounded-t-lg border-b last:border-b-0 border-gray-200">
+                    {{ $item->text }}
+                </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+</body>

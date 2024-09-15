@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: #f8fafc;
+}
+.t4s-shipping-item:hover .t4s-shipping-icon {
+animation: bounceIn .5s ease;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: bounceIn;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+}

@@ -1,0 +1,52 @@
+php artisan serve
+npm run dev
+
+
+font-famiry
+font-sans
+font-serif
+font-mono
+
+tailwind.config.js:
+    extend: {
+      fontFamily{
+        fantasy:["fantasy"] もしくは"fantasy"
+      }
+    },
+
+font-fantasy
+
+php artisan make:model TodoList -mc
+-m マイグレーションファリルも一緒に作成
+-c コントローラーも一緒に作成
+
+https://qiita.com/awesam86/items/0bc8c3f70222220259b0
+テンプレート化の方法
+
+ヘッダー作成
+layouts/common.blade.php
+
+laravel　コントローラー作成　オプション一覧
+php artisan make:controller コントローラー名：
+
+オプション	省略形	必須	説明
+api	-	-	コントローラからcreateメソッドとeditメソッドを除外する
+type	-	-	使用するコントローラのスタブファイルを手動で指定します。
+force	-	-	コントローラーが既に存在する場合でも、クラスを作成する
+invokable	-	-	単一メソッドで起動可能なControllerクラスを生成する。
+model	-	-	与えられたモデルのリソースコントローラを生成する
+parent	-	-	ネストしたリソースコントローラクラスを生成する
+resource	-	-	リソースコントローラクラスを生成する
+requests	-	-	ストアとアップデートのためのFormRequestクラスを生成する。
+singleton	-	-	シングルトンリソースコントローラクラスを生成する
+creatable	-	-	シングルトンリソースが作成可能であることを示す。
+test	-	-	Controllerに付随するPHPUnitのテストを生成します。
+pest	-	-	Controllerに付随するPestテストを生成する。
+
+DDメソッドを使ってデバッグ
+
+postmanを利用する際に、csrfエラー419がおきる。
+その際は一時的にテスト環境にするか、簡単なのは以下「Kernel.php」の部分をコメントアウトして、
+csrfを一時的に使わないようにすればエラーは起きない。
+app/Http/Kernel.php:
+// \App\Http\Middleware\VerifyCsrfToken::class,
